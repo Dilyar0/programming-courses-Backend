@@ -1,6 +1,5 @@
 from random import randint
 from datetime import datetime
-import sys
 
 attempts = int(input("Выберите количество попыток: "))
 userName = input("Ваше имя: ")
