@@ -45,6 +45,3 @@ print(f'Времени потрачено {end - start}')
 #
 # print(randint(1, 5))
 
-
-
-# g('Anarbek')
