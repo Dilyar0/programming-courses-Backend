@@ -64,7 +64,7 @@ class SmartPhone(Computer, Phone):
 
 sim = ["1 - O!", "2 - Beeline"]
 pc = Computer(3500, 8)
-pcInfo = Computer.make_computations(pc)
+pc.make_computations()
 tel = Phone(1)
 smartP = SmartPhone(888, 6, sim[0])
 smartP2 = SmartPhone(2500, 4, sim[1])
@@ -73,8 +73,8 @@ smartP.use_gps("Аламедин")
 
 
 print(pc)
+print(pc.make_computations())
 print(tel)
-print(pcInfo)
 print(smartP)
 print(smartP2)
 print(pc > smartP)
