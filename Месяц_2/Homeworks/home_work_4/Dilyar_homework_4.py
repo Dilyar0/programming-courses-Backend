@@ -101,25 +101,32 @@ class Berserk(Hero):
 
 
 class Thor(Hero):
-    def __init__(self, name, health, damage):
-        super().__init__(name, health, damage, "STUN")
+    def __init__(self, name, health, damage, stan = 0):
+        super().__init__(name, health, damage, "STAN")
+        self.__stan = stan
 
     def apply_super_ability(self, boss, heroes):
-        if round_number == 1:
-            boss.damage = 0
-        else:
+        if self.health > 0 and round_number == 1:
+            self.damage = self.__stan
+        elif self.damage == self.__stan:
             boss.damage = 50
+        else:
+            boss.damage = 0
 
 
 class Golem(Hero):
-    def __init__(self, name, health, damage):
+    def __init__(self, name, health, damage, protection = 0):
         super().__init__(name, health, damage, "PROTECTION")
+        self.__protection = protection
 
     def apply_super_ability(self, boss, heroes):
-        bossHit = (boss.damage / 5)
         for hero in heroes:
-            hero.health + bossHit
-            self.health - bossHit
+            if hero.health > 0:
+                self.__protection = boss.damage // 5
+                if boss.damage >= 1:
+                    hero.health = hero.health + self.__protection
+                else:
+                    hero.health = hero.health - boss.damage
 
 
 class Witcher(Hero):
