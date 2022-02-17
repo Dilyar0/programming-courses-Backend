@@ -26,21 +26,6 @@ class Casino:
                     else:
                         print("да или нет?")
 
-                if self.__win_slot == self.__choice:
-                    self.__cash += self.__bet
-                    print(f'You win\n money: {self.__cash}')
-                    if self.__win_slot == self.__choice:
-                        ans = input('do you want to play more?(yes or write any words): ')
-                        if ans != 'yes':
-                            break
-
-                else:
-                    self.__cash -= self.__bet
-                    print(f' You lost \n money: {self.__cash}')
-                    if self.__win_slot != self.__choice:
-                        ans = input('do you want to play again?(yes or write any words): ')
-                        if ans != 'yes':
-                            break
 
     @property
     def win(self):
