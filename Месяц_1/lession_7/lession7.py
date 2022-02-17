@@ -1,5 +1,5 @@
 #=================================== модули
-from lesson_5 import greeting as g
+# from lesson_5 import greeting as g
 from random import randint
 from datetime import datetime
 
