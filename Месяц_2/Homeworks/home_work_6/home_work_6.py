@@ -49,30 +49,30 @@ def MainFunc():
             if len(stringM) > 4:
                 stringM[0] += ' ' + stringM.pop(1)
             info = Data(*stringM)
-            with open(files[0], 'a') as f0:
-                f0.write(info.full_name)
-                f0.write('\r')
-            with open(files[1], 'a') as f1:
-                f1.write(info.email)
-                f1.write('\r')
-            with open(files[2], 'a') as f2:
-                f2.write(info.file_name)
-                f2.write('\r')
-            with open(files[3], 'a') as f3:
-                f3.write(info.color)
-                f3.write('\r')
+            with open(files[0], 'a') as fullN:
+                fullN.write(info.full_name)
+                fullN.write('\r')
+            with open(files[1], 'a') as emailN:
+                emailN.write(info.email)
+                emailN.write('\r')
+            with open(files[2], 'a') as fileN:
+                fileN.write(info.file_name)
+                fileN.write('\r')
+            with open(files[3], 'a') as colorN:
+                colorN.write(info.color)
+                colorN.write('\r')
 
 def RemList():
-    file = open('dates/full_name.txt', 'w')
+    file = open('full_name.txt', 'w')
     file.close()
 
-    file = open('dates/email.txt', 'w')
+    file = open('email.txt', 'w')
     file.close()
 
-    file = open('dates/file_name.txt', 'w')
+    file = open('file_name.txt', 'w')
     file.close()
 
-    file = open('dates/color.txt', 'w')
+    file = open('color.txt', 'w')
     file.close()
 
 
